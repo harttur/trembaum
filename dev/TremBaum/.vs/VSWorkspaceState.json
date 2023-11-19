@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Helpers",
+    "\\Migrations",
+    "\\Models",
+    "\\obj",
+    "\\Properties",
+    "\\ViewModels",
+    "\\Views",
+    "\\wwwroot"
+  ],
+  "SelectedNode": "\\ViewModels\\ProdutoModel.cs",
+  "PreviewInSolutionExplorer": false
+}

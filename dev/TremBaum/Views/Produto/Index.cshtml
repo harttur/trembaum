@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Produto";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Produtos</title>
+</head>
+<body>
+    <h3>Lista de Produtos</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Foto</th>
+            <th>Preco</th>
+            <th>Comprar</th>
+        </tr>
+        @foreach (var Produto in ViewBag.Produto)
+        {
+            <tr>
+                <td>@Produto.Id_produto</td>
+                <td>@Produto.Nome</td>
+                <td><img src="~/images/@Produto.Foto" width="60"></td>
+                <td>@Produto.Preco</td>
+                <td align="center">
+                    <a asp-controller="Carrinho" asp-action="Comprar" asp-route-id="@Produto.Id_produto">Comprar</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h3>Carrinho</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Opção</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Foto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (var item in ViewBag.carrinho)
+        {
+            <tr>
+                <td> <a> asp-controller="carrinho" asp-action="Remover" asp-route-id="@item.Produto.Id_produto">Remover</a> </td>
+                <td>@item.Produto.Id_produto</td>
+                <td>@item.Produto.Nome</td>
+                <td> <img src="~/images/@item.Produto.Foto" width="60"/> </td>
+                <td>@item.Produto.Preco</td>
+                <td>@item.Quantidade</td>
+                <td>@(item.Produto.Preco * item.Quantidade )</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6"> Total </td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </table>
+    <br />
+    <a asp-controller="produto" asp-action="index">Continuar comprando</a>
+    <a asp-controller="checkout" asp-action="index" asp-route-id="">Finalizar compra</a>
+</body>
+</html>
+
